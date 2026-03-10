@@ -4,6 +4,7 @@ import 'dotenv/config';
 
 import express from 'express';
 import cors from 'cors';
+import pokemonsList from './data/pokemonsList.js';
 
 
 
@@ -18,6 +19,10 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
     res.send('Hello, World!');
+});
+
+app.get('/api/pokemons', (req, res) => {
+    res.json(pokemonsList);
 });
 
 
